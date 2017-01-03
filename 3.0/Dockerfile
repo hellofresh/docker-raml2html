@@ -1,8 +1,7 @@
-FROM node:slim
+FROM node:6.9.2-alpine
 
-ENV RAML2HTML_VERSION 3.0.0
-
-RUN npm install --global "raml2html@${RAML2HTML_VERSION}"
+RUN npm install -g raml2html@3.0.1 \
+ && npm cache clean
 
 RUN mkdir -p /data
 VOLUME /data

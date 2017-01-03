@@ -1,9 +1,7 @@
-FROM node:alpine
+FROM node:6.9.2-alpine
 
-ENV RAML2HTML_VERSION 4.0
-
-RUN npm install --global "raml2html@${RAML2HTML_VERSION}" && \
-    npm cache --global clean
+RUN npm install -g raml2html@4.0.4 \
+ && npm cache clean
 
 RUN mkdir -p /data
 VOLUME /data
